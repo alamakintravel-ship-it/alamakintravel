@@ -168,7 +168,7 @@ $("#chips").onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;draw()}};
 $("#cards").onclick=e=>{const i=e.target.dataset.i;if(i!=null){$("#dt").textContent=P[i].n;$("#dm").textContent="";$("#dlg").showModal()}};
 $("#dx").onclick=()=>$("#dlg").close();
 $("#df").onsubmit=e=>{e.preventDefault();$("#dm").textContent="وصلنا طلبك، وسنتواصل معك قريبًا.";setTimeout(()=>$("#dlg").close(),1600)};
-const F={f:[["من","text","الرياض"],["إلى","text","دبي"],["الذهاب","date"],["العودة","date"],["المسافرون","number","1"]],h:[["المدينة","text","مشهد"],["الوصول","date"],["المغادرة","date"],["الضيوف","number","2"],["الغرف","number","1"]]};
+const F={f:[["من","text","البصرة"],["إلى","text","بغداد"],["الذهاب","date"],["العودة","date"],["المسافرون","number","1"]],h:[["المدينة","text","مشهد"],["الوصول","date"],["المغادرة","date"],["الضيوف","number","2"],["الغرف","number","1"]]};
 function tab(k){$("#fields").innerHTML=F[k].map(([l,t,v])=>`<label>${l}<input required type="${t}" ${t=="text"?`placeholder="${v}"`:""}${t=="number"?`min="1" value="${v}"`:""}></label>`).join("");$("#bmsg").textContent=""}
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x==b));tab(b.dataset.t)});
 $("#bf").onsubmit=e=>{e.preventDefault();$("#bmsg").textContent="تم استلام طلبك. سنرسل لك أفضل الأسعار المتاحة."};
